@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblFirstRecord = new System.Windows.Forms.Label();
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.lblMostRecentRecord = new System.Windows.Forms.Label();
@@ -158,17 +158,17 @@
             // 
             // chtMainYear
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chtMainYear.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chtMainYear.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chtMainYear.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtMainYear.Legends.Add(legend2);
             this.chtMainYear.Location = new System.Drawing.Point(406, 42);
             this.chtMainYear.Name = "chtMainYear";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chtMainYear.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtMainYear.Series.Add(series2);
             this.chtMainYear.Size = new System.Drawing.Size(727, 545);
             this.chtMainYear.TabIndex = 11;
             this.chtMainYear.Text = "chart1";
@@ -181,6 +181,7 @@
             this.btnAddRecord.TabIndex = 12;
             this.btnAddRecord.Text = "Add record";
             this.btnAddRecord.UseVisualStyleBackColor = true;
+            this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
             // 
             // MainScreen
             // 

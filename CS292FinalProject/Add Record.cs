@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace CS292FinalProject
 {
-    public partial class MainScreen : Form
+    public partial class Add_Record : Form
     {
-        public MainScreen()
+        public Add_Record()
         {
             InitializeComponent();
-        }
-
-        private void btnAddRecord_Click(object sender, EventArgs e)
-        {
-            Add_Record addRecord = new Add_Record();
-            addRecord.Show();
         }
     }
 }

@@ -2,8 +2,9 @@ c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292Fin
 c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\bin\Debug\CS292FinalProject.exe
 c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\bin\Debug\CS292FinalProject.pdb
 c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.csprojResolveAssemblyReference.cache
-c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.Form1.resources
 c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.Properties.Resources.resources
 c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.csproj.GenerateResource.Cache
 c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.exe
 c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.pdb
+c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.Add_Record.resources
+c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.MainScreen.resources
