@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/*
+ * Name: Warren Barnes
+ * Date: 10/26/16
+ * Project: Final Project
+ * Purpose: Learn C#
+ */
+
+using System;
 using System.Windows.Forms;
 
 namespace CS292FinalProject
@@ -21,6 +21,42 @@ namespace CS292FinalProject
         {
             Add_Record addRecord = new Add_Record();
             addRecord.Show();
+        }
+
+        private void btnViewAllRecords_Click(object sender, EventArgs e)
+        {
+            View_All_Records viewAllRecords = new View_All_Records();
+            viewAllRecords.Show();
+        }
+
+        private void btnLineGraph_Click(object sender, EventArgs e)
+        {
+            btnLineGraph.Enabled = false;
+            btnBarChart.Enabled = true;
+            btnPieChart.Enabled = true;
+            chtLineGraph.Visible = true;
+            chtBarChart.Visible = false;
+            chtPieChart.Visible = false;
+        }
+
+        private void btnBarChart_Click(object sender, EventArgs e)
+        {
+            btnLineGraph.Enabled = true;
+            btnBarChart.Enabled = false;
+            btnPieChart.Enabled = true;
+            chtLineGraph.Visible = false;
+            chtBarChart.Visible = true;
+            chtPieChart.Visible = false;
+        }
+
+        private void btnPieChart_Click(object sender, EventArgs e)
+        {
+            btnLineGraph.Enabled = true; ;
+            btnBarChart.Enabled = true;
+            btnPieChart.Enabled = false;
+            chtLineGraph.Visible = false;
+            chtBarChart.Visible = false;
+            chtPieChart.Visible = true;
         }
     }
 }

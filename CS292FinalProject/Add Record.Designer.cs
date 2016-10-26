@@ -42,6 +42,7 @@
             this.btnNewType = new System.Windows.Forms.Button();
             this.txtNewType = new System.Windows.Forms.TextBox();
             this.btnAddRecord = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -153,18 +154,29 @@
             // 
             // btnAddRecord
             // 
-            this.btnAddRecord.Location = new System.Drawing.Point(106, 339);
+            this.btnAddRecord.Location = new System.Drawing.Point(149, 340);
             this.btnAddRecord.Name = "btnAddRecord";
             this.btnAddRecord.Size = new System.Drawing.Size(158, 42);
             this.btnAddRecord.TabIndex = 14;
             this.btnAddRecord.Text = "Add record";
             this.btnAddRecord.UseVisualStyleBackColor = true;
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(409, 340);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(158, 42);
+            this.btnClose.TabIndex = 15;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // Add_Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 428);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddRecord);
             this.Controls.Add(this.txtNewType);
             this.Controls.Add(this.btnNewType);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Button btnNewType;
         private System.Windows.Forms.TextBox txtNewType;
         private System.Windows.Forms.Button btnAddRecord;
+        private System.Windows.Forms.Button btnClose;
     }
 }

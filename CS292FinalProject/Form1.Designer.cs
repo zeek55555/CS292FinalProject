@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblFirstRecord = new System.Windows.Forms.Label();
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.lblMostRecentRecord = new System.Windows.Forms.Label();
@@ -43,10 +49,24 @@
             this.lblStoreWithMostPurchases = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chtMainYear = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chtLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnAddRecord = new System.Windows.Forms.Button();
+            this.btnViewAllRecords = new System.Windows.Forms.Button();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLineGraph = new System.Windows.Forms.Button();
+            this.chtBarChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnBarChart = new System.Windows.Forms.Button();
+            this.btnPieChart = new System.Windows.Forms.Button();
+            this.chtPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnEditRecord = new System.Windows.Forms.Button();
+            this.btnDeleteRecord = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chtMainYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFirstRecord
@@ -143,7 +163,8 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1205, 28);
@@ -152,26 +173,28 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.closeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // chtMainYear
+            // chtLineGraph
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chtMainYear.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chtMainYear.Legends.Add(legend2);
-            this.chtMainYear.Location = new System.Drawing.Point(406, 42);
-            this.chtMainYear.Name = "chtMainYear";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chtMainYear.Series.Add(series2);
-            this.chtMainYear.Size = new System.Drawing.Size(727, 545);
-            this.chtMainYear.TabIndex = 11;
-            this.chtMainYear.Text = "chart1";
+            chartArea1.Name = "ChartArea1";
+            this.chtLineGraph.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chtLineGraph.Legends.Add(legend1);
+            this.chtLineGraph.Location = new System.Drawing.Point(368, 12);
+            this.chtLineGraph.Name = "chtLineGraph";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chtLineGraph.Series.Add(series1);
+            this.chtLineGraph.Size = new System.Drawing.Size(727, 508);
+            this.chtLineGraph.TabIndex = 11;
+            this.chtLineGraph.Text = "Line Graph";
             // 
             // btnAddRecord
             // 
@@ -179,17 +202,146 @@
             this.btnAddRecord.Name = "btnAddRecord";
             this.btnAddRecord.Size = new System.Drawing.Size(121, 44);
             this.btnAddRecord.TabIndex = 12;
-            this.btnAddRecord.Text = "Add record";
+            this.btnAddRecord.Text = "Add Record";
             this.btnAddRecord.UseVisualStyleBackColor = true;
             this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
+            // 
+            // btnViewAllRecords
+            // 
+            this.btnViewAllRecords.Location = new System.Drawing.Point(200, 492);
+            this.btnViewAllRecords.Name = "btnViewAllRecords";
+            this.btnViewAllRecords.Size = new System.Drawing.Size(121, 44);
+            this.btnViewAllRecords.TabIndex = 13;
+            this.btnViewAllRecords.Text = "View All Records";
+            this.btnViewAllRecords.UseVisualStyleBackColor = true;
+            this.btnViewAllRecords.Click += new System.EventHandler(this.btnViewAllRecords_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optionsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.closeToolStripMenuItem.Text = "Close";
+            // 
+            // btnLineGraph
+            // 
+            this.btnLineGraph.Enabled = false;
+            this.btnLineGraph.Location = new System.Drawing.Point(439, 580);
+            this.btnLineGraph.Name = "btnLineGraph";
+            this.btnLineGraph.Size = new System.Drawing.Size(140, 38);
+            this.btnLineGraph.TabIndex = 14;
+            this.btnLineGraph.Text = "Line Graph";
+            this.btnLineGraph.UseVisualStyleBackColor = true;
+            this.btnLineGraph.Click += new System.EventHandler(this.btnLineGraph_Click);
+            // 
+            // chtBarChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chtBarChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chtBarChart.Legends.Add(legend2);
+            this.chtBarChart.Location = new System.Drawing.Point(479, 43);
+            this.chtBarChart.Name = "chtBarChart";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chtBarChart.Series.Add(series2);
+            this.chtBarChart.Size = new System.Drawing.Size(726, 507);
+            this.chtBarChart.TabIndex = 15;
+            this.chtBarChart.Text = "Bar Chart";
+            this.chtBarChart.Visible = false;
+            // 
+            // btnBarChart
+            // 
+            this.btnBarChart.Location = new System.Drawing.Point(628, 580);
+            this.btnBarChart.Name = "btnBarChart";
+            this.btnBarChart.Size = new System.Drawing.Size(140, 38);
+            this.btnBarChart.TabIndex = 16;
+            this.btnBarChart.Text = "Bar Chart";
+            this.btnBarChart.UseVisualStyleBackColor = true;
+            this.btnBarChart.Click += new System.EventHandler(this.btnBarChart_Click);
+            // 
+            // btnPieChart
+            // 
+            this.btnPieChart.Location = new System.Drawing.Point(815, 580);
+            this.btnPieChart.Name = "btnPieChart";
+            this.btnPieChart.Size = new System.Drawing.Size(140, 38);
+            this.btnPieChart.TabIndex = 17;
+            this.btnPieChart.Text = "Pie Chart";
+            this.btnPieChart.UseVisualStyleBackColor = true;
+            this.btnPieChart.Click += new System.EventHandler(this.btnPieChart_Click);
+            // 
+            // chtPieChart
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chtPieChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chtPieChart.Legends.Add(legend3);
+            this.chtPieChart.Location = new System.Drawing.Point(455, 121);
+            this.chtPieChart.Name = "chtPieChart";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chtPieChart.Series.Add(series3);
+            this.chtPieChart.Size = new System.Drawing.Size(695, 399);
+            this.chtPieChart.TabIndex = 18;
+            this.chtPieChart.Text = "Pie Chart";
+            this.chtPieChart.Visible = false;
+            // 
+            // btnEditRecord
+            // 
+            this.btnEditRecord.Location = new System.Drawing.Point(42, 492);
+            this.btnEditRecord.Name = "btnEditRecord";
+            this.btnEditRecord.Size = new System.Drawing.Size(121, 44);
+            this.btnEditRecord.TabIndex = 19;
+            this.btnEditRecord.Text = "Edit Record";
+            this.btnEditRecord.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteRecord
+            // 
+            this.btnDeleteRecord.Location = new System.Drawing.Point(42, 559);
+            this.btnDeleteRecord.Name = "btnDeleteRecord";
+            this.btnDeleteRecord.Size = new System.Drawing.Size(121, 44);
+            this.btnDeleteRecord.TabIndex = 20;
+            this.btnDeleteRecord.Text = "Delete Record";
+            this.btnDeleteRecord.UseVisualStyleBackColor = true;
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 641);
+            this.Controls.Add(this.btnDeleteRecord);
+            this.Controls.Add(this.btnEditRecord);
+            this.Controls.Add(this.chtPieChart);
+            this.Controls.Add(this.btnPieChart);
+            this.Controls.Add(this.btnBarChart);
+            this.Controls.Add(this.chtBarChart);
+            this.Controls.Add(this.btnLineGraph);
+            this.Controls.Add(this.btnViewAllRecords);
             this.Controls.Add(this.btnAddRecord);
-            this.Controls.Add(this.chtMainYear);
+            this.Controls.Add(this.chtLineGraph);
             this.Controls.Add(this.lblStoreWithMostPurchases);
             this.Controls.Add(this.lblLargestTotalType);
             this.Controls.Add(this.lblLargestTotalRetailer);
@@ -206,7 +358,9 @@
             this.Text = "Spending Spotter";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chtMainYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,8 +380,20 @@
         private System.Windows.Forms.Label lblStoreWithMostPurchases;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chtMainYear;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtLineGraph;
         private System.Windows.Forms.Button btnAddRecord;
+        private System.Windows.Forms.Button btnViewAllRecords;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Button btnLineGraph;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtBarChart;
+        private System.Windows.Forms.Button btnBarChart;
+        private System.Windows.Forms.Button btnPieChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtPieChart;
+        private System.Windows.Forms.Button btnEditRecord;
+        private System.Windows.Forms.Button btnDeleteRecord;
     }
 }
 

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CS292FinalProject
 {
-    public partial class Add_Record : Form
+    public partial class View_All_Records : Form
     {
-        public Add_Record()
+        public View_All_Records()
         {
             InitializeComponent();
         }
