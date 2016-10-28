@@ -21,5 +21,12 @@ namespace CS292FinalProject
         {
             this.Close();
         }
+
+        private void View_All_Records_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'spendingRecordsDataSet.spendingRecords' table. You can move, or remove it, as needed.
+            this.spendingRecordsTableAdapter.Fill(this.spendingRecordsDataSet.spendingRecords);
+
+        }
     }
 }
