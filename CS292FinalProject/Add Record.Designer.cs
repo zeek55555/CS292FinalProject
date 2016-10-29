@@ -32,14 +32,14 @@
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.cboStoreName = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblStoreName = new System.Windows.Forms.Label();
             this.lblPurchaseType = new System.Windows.Forms.Label();
             this.cboPurchaseType = new System.Windows.Forms.ComboBox();
             this.lblNewStore = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNewStore = new System.Windows.Forms.TextBox();
             this.btnAddStore = new System.Windows.Forms.Button();
             this.lblNewType = new System.Windows.Forms.Label();
-            this.btnNewType = new System.Windows.Forms.Button();
+            this.btnAddType = new System.Windows.Forms.Button();
             this.txtNewType = new System.Windows.Forms.TextBox();
             this.btnAddRecord = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -76,14 +76,14 @@
             this.cboStoreName.Size = new System.Drawing.Size(150, 24);
             this.cboStoreName.TabIndex = 3;
             // 
-            // label1
+            // lblStoreName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 128);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Store name:";
+            this.lblStoreName.AutoSize = true;
+            this.lblStoreName.Location = new System.Drawing.Point(33, 128);
+            this.lblStoreName.Name = "lblStoreName";
+            this.lblStoreName.Size = new System.Drawing.Size(85, 17);
+            this.lblStoreName.TabIndex = 4;
+            this.lblStoreName.Text = "Store name:";
             // 
             // lblPurchaseType
             // 
@@ -111,12 +111,12 @@
             this.lblNewStore.TabIndex = 7;
             this.lblNewStore.Text = "New store:";
             // 
-            // textBox1
+            // txtNewStore
             // 
-            this.textBox1.Location = new System.Drawing.Point(480, 125);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 22);
-            this.textBox1.TabIndex = 8;
+            this.txtNewStore.Location = new System.Drawing.Point(480, 125);
+            this.txtNewStore.Name = "txtNewStore";
+            this.txtNewStore.Size = new System.Drawing.Size(182, 22);
+            this.txtNewStore.TabIndex = 8;
             // 
             // btnAddStore
             // 
@@ -136,14 +136,14 @@
             this.lblNewType.TabIndex = 10;
             this.lblNewType.Text = "New type:";
             // 
-            // btnNewType
+            // btnAddType
             // 
-            this.btnNewType.Location = new System.Drawing.Point(498, 278);
-            this.btnNewType.Name = "btnNewType";
-            this.btnNewType.Size = new System.Drawing.Size(138, 29);
-            this.btnNewType.TabIndex = 12;
-            this.btnNewType.Text = "Add type";
-            this.btnNewType.UseVisualStyleBackColor = true;
+            this.btnAddType.Location = new System.Drawing.Point(498, 278);
+            this.btnAddType.Name = "btnAddType";
+            this.btnAddType.Size = new System.Drawing.Size(138, 29);
+            this.btnAddType.TabIndex = 12;
+            this.btnAddType.Text = "Add type";
+            this.btnAddType.UseVisualStyleBackColor = true;
             // 
             // txtNewType
             // 
@@ -179,14 +179,14 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddRecord);
             this.Controls.Add(this.txtNewType);
-            this.Controls.Add(this.btnNewType);
+            this.Controls.Add(this.btnAddType);
             this.Controls.Add(this.lblNewType);
             this.Controls.Add(this.btnAddStore);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNewStore);
             this.Controls.Add(this.lblNewStore);
             this.Controls.Add(this.cboPurchaseType);
             this.Controls.Add(this.lblPurchaseType);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblStoreName);
             this.Controls.Add(this.cboStoreName);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
@@ -204,14 +204,14 @@
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.ComboBox cboStoreName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblStoreName;
         private System.Windows.Forms.Label lblPurchaseType;
         private System.Windows.Forms.ComboBox cboPurchaseType;
         private System.Windows.Forms.Label lblNewStore;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNewStore;
         private System.Windows.Forms.Button btnAddStore;
         private System.Windows.Forms.Label lblNewType;
-        private System.Windows.Forms.Button btnNewType;
+        private System.Windows.Forms.Button btnAddType;
         private System.Windows.Forms.TextBox txtNewType;
         private System.Windows.Forms.Button btnAddRecord;
         private System.Windows.Forms.Button btnClose;

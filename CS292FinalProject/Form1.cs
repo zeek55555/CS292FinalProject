@@ -58,5 +58,12 @@ namespace CS292FinalProject
             chtBarChart.Visible = false;
             chtPieChart.Visible = true;
         }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'spendingRecordsDataSet.spendingRecords' table. You can move, or remove it, as needed.
+            this.spendingRecordsTableAdapter.Fill(this.spendingRecordsDataSet.spendingRecords);
+
+        }
     }
 }

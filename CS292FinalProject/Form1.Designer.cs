@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -49,13 +50,13 @@
             this.lblStoreWithMostPurchases = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chtLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.btnAddRecord = new System.Windows.Forms.Button();
-            this.btnViewAllRecords = new System.Windows.Forms.Button();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chtLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnAddRecord = new System.Windows.Forms.Button();
+            this.btnViewAllRecords = new System.Windows.Forms.Button();
             this.btnLineGraph = new System.Windows.Forms.Button();
             this.chtBarChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnBarChart = new System.Windows.Forms.Button();
@@ -63,10 +64,21 @@
             this.chtPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnEditRecord = new System.Windows.Forms.Button();
             this.btnDeleteRecord = new System.Windows.Forms.Button();
+            this.spendingRecordsDataSet = new CS292FinalProject.spendingRecordsDataSet();
+            this.spendingRecordsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spendingRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spendingRecordsTableAdapter = new CS292FinalProject.spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
+            this.spendingRecordsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.spendingRecordsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFirstRecord
@@ -179,18 +191,48 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.closeToolStripMenuItem.Text = "Close";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.optionsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // chtLineGraph
             // 
             chartArea1.Name = "ChartArea1";
             this.chtLineGraph.ChartAreas.Add(chartArea1);
+            this.chtLineGraph.DataSource = this.spendingRecordsBindingSource;
             legend1.Name = "Legend1";
             this.chtLineGraph.Legends.Add(legend1);
-            this.chtLineGraph.Location = new System.Drawing.Point(368, 12);
+            this.chtLineGraph.Location = new System.Drawing.Point(389, 42);
             this.chtLineGraph.Name = "chtLineGraph";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
+            series1.XValueMember = "Date";
+            series1.YValueMembers = "Amount";
             this.chtLineGraph.Series.Add(series1);
             this.chtLineGraph.Size = new System.Drawing.Size(727, 508);
             this.chtLineGraph.TabIndex = 11;
@@ -216,33 +258,6 @@
             this.btnViewAllRecords.UseVisualStyleBackColor = true;
             this.btnViewAllRecords.Click += new System.EventHandler(this.btnViewAllRecords_Click);
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.closeToolStripMenuItem.Text = "Close";
-            // 
             // btnLineGraph
             // 
             this.btnLineGraph.Enabled = false;
@@ -258,13 +273,16 @@
             // 
             chartArea2.Name = "ChartArea1";
             this.chtBarChart.ChartAreas.Add(chartArea2);
+            this.chtBarChart.DataSource = this.spendingRecordsBindingSource1;
             legend2.Name = "Legend1";
             this.chtBarChart.Legends.Add(legend2);
-            this.chtBarChart.Location = new System.Drawing.Point(479, 43);
+            this.chtBarChart.Location = new System.Drawing.Point(389, 43);
             this.chtBarChart.Name = "chtBarChart";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "Series1";
+            series2.XValueMember = "Date";
+            series2.YValueMembers = "Amount";
             this.chtBarChart.Series.Add(series2);
             this.chtBarChart.Size = new System.Drawing.Size(726, 507);
             this.chtBarChart.TabIndex = 15;
@@ -295,16 +313,19 @@
             // 
             chartArea3.Name = "ChartArea1";
             this.chtPieChart.ChartAreas.Add(chartArea3);
+            this.chtPieChart.DataSource = this.spendingRecordsBindingSource2;
             legend3.Name = "Legend1";
             this.chtPieChart.Legends.Add(legend3);
-            this.chtPieChart.Location = new System.Drawing.Point(455, 121);
+            this.chtPieChart.Location = new System.Drawing.Point(389, 42);
             this.chtPieChart.Name = "chtPieChart";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series3.Legend = "Legend1";
             series3.Name = "Series1";
+            series3.XValueMember = "Type";
+            series3.YValueMembers = "Amount";
             this.chtPieChart.Series.Add(series3);
-            this.chtPieChart.Size = new System.Drawing.Size(695, 399);
+            this.chtPieChart.Size = new System.Drawing.Size(727, 508);
             this.chtPieChart.TabIndex = 18;
             this.chtPieChart.Text = "Pie Chart";
             this.chtPieChart.Visible = false;
@@ -326,6 +347,35 @@
             this.btnDeleteRecord.TabIndex = 20;
             this.btnDeleteRecord.Text = "Delete Record";
             this.btnDeleteRecord.UseVisualStyleBackColor = true;
+            // 
+            // spendingRecordsDataSet
+            // 
+            this.spendingRecordsDataSet.DataSetName = "spendingRecordsDataSet";
+            this.spendingRecordsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // spendingRecordsDataSetBindingSource
+            // 
+            this.spendingRecordsDataSetBindingSource.DataSource = this.spendingRecordsDataSet;
+            this.spendingRecordsDataSetBindingSource.Position = 0;
+            // 
+            // spendingRecordsBindingSource
+            // 
+            this.spendingRecordsBindingSource.DataMember = "spendingRecords";
+            this.spendingRecordsBindingSource.DataSource = this.spendingRecordsDataSetBindingSource;
+            // 
+            // spendingRecordsTableAdapter
+            // 
+            this.spendingRecordsTableAdapter.ClearBeforeFill = true;
+            // 
+            // spendingRecordsBindingSource1
+            // 
+            this.spendingRecordsBindingSource1.DataMember = "spendingRecords";
+            this.spendingRecordsBindingSource1.DataSource = this.spendingRecordsDataSetBindingSource;
+            // 
+            // spendingRecordsBindingSource2
+            // 
+            this.spendingRecordsBindingSource2.DataMember = "spendingRecords";
+            this.spendingRecordsBindingSource2.DataSource = this.spendingRecordsDataSetBindingSource;
             // 
             // MainScreen
             // 
@@ -356,11 +406,17 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainScreen";
             this.Text = "Spending Spotter";
+            this.Load += new System.EventHandler(this.MainScreen_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,6 +450,12 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chtPieChart;
         private System.Windows.Forms.Button btnEditRecord;
         private System.Windows.Forms.Button btnDeleteRecord;
+        private spendingRecordsDataSet spendingRecordsDataSet;
+        private System.Windows.Forms.BindingSource spendingRecordsDataSetBindingSource;
+        private System.Windows.Forms.BindingSource spendingRecordsBindingSource;
+        private spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter spendingRecordsTableAdapter;
+        private System.Windows.Forms.BindingSource spendingRecordsBindingSource1;
+        private System.Windows.Forms.BindingSource spendingRecordsBindingSource2;
     }
 }
 
