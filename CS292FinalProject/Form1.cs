@@ -17,6 +17,11 @@ namespace CS292FinalProject
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Button click handler to create and show "Add New Record" screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddRecord_Click(object sender, EventArgs e)
         {
             Add_Record addRecord = new Add_Record();
