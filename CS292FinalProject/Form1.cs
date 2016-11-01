@@ -28,6 +28,11 @@ namespace CS292FinalProject
             addRecord.Show();
         }
 
+        /// <summary>
+        /// Button click hander to create and show "View All Records" screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnViewAllRecords_Click(object sender, EventArgs e)
         {
             View_All_Records viewAllRecords = new View_All_Records();
