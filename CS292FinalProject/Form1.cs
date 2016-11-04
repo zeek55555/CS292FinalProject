@@ -39,6 +39,11 @@ namespace CS292FinalProject
             viewAllRecords.Show();
         }
 
+        /// <summary>
+        /// Button click handler to switch to line graph view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLineGraph_Click(object sender, EventArgs e)
         {
             btnLineGraph.Enabled = false;
