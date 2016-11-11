@@ -81,6 +81,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>spendingRecordsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Stores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Stores.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View All Records.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +129,17 @@
     </None>
     <None Include="spendingRecordsDataSet.xss">
       <DependentUpon>spendingRecordsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Stores.xsc">
+      <DependentUpon>Stores.xsd</DependentUpon>
+    </None>
+    <None Include="Stores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Stores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Stores.xss">
+      <DependentUpon>Stores.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

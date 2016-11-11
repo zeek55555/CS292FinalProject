@@ -19,12 +19,18 @@ namespace CS292FinalProject
         public Add_Record()
         {
             InitializeComponent();
-            cboStoreName.Items.Add("Kroger");
-            cboStoreName.Items.Add("Best Buy");
-            cboStoreName.Items.Add("Amazon");
-            cboPurchaseType.Items.Add("Grocieries");
-            cboPurchaseType.Items.Add("Electronics");
-            cboPurchaseType.Items.Add("Car parts");
+            //cboStoreName.Items.Add("Kroger");
+            //cboStoreName.Items.Add("Best Buy");
+            //cboStoreName.Items.Add("Amazon");
+            //cboPurchaseType.Items.Add("Grocieries");
+            //cboPurchaseType.Items.Add("Electronics");
+            //cboPurchaseType.Items.Add("Car parts");
+
+            //System.Data.DataView dv = glObalDataSet.Tables["Stores"].DefaultView;
+            //dv.RowFilter = "CONT = '" + cboStoreName.SelectedValue.ToString() + "'";
+            //cboStoreName.DataSource = dv;
+            //cboStoreName.DisplayMember = "StoreName";
+            //cboStoreName.ValueMember = "ID";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
