@@ -126,6 +126,7 @@
             this.btnAddStore.TabIndex = 9;
             this.btnAddStore.Text = "Add store";
             this.btnAddStore.UseVisualStyleBackColor = true;
+            this.btnAddStore.Click += new System.EventHandler(this.btnAddStore_Click);
             // 
             // lblNewType
             // 
@@ -144,6 +145,7 @@
             this.btnAddType.TabIndex = 12;
             this.btnAddType.Text = "Add type";
             this.btnAddType.UseVisualStyleBackColor = true;
+            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
             // 
             // txtNewType
             // 
@@ -193,6 +195,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "Add_Record";
             this.Text = "Add Record";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.saveComboBoxItems);
             this.ResumeLayout(false);
             this.PerformLayout();
 

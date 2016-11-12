@@ -80,5 +80,10 @@ namespace CS292FinalProject
             this.spendingRecordsTableAdapter.Fill(this.spendingRecordsDataSet.spendingRecords);
 
         }
+
+        private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
