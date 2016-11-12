@@ -103,5 +103,21 @@ namespace CS292FinalProject
             file2.Write(output);
             file2.Close();
         }
+
+        private void btnAddRecord_Click(object sender, EventArgs e)
+        {
+            DateTime dateTime = dateTimePicker.Value.Date;
+            double amount = 0;
+            bool result = double.TryParse(txtAmount.Text, out amount);
+            if (!result)
+            {
+                MessageBox.Show("Record could not be added due to invalid amount");
+                return;
+            }
+            String type = cboPurchaseType.SelectedItem.ToString();
+
+            spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter adapter = new spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
+            adapter.AddSpendingRecord(dateTime, (decimal) amount, type);
+        }
     }
 }

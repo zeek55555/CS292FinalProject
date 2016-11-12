@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.cboStoreName = new System.Windows.Forms.ComboBox();
@@ -45,12 +45,12 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(28, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(294, 22);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker.Location = new System.Drawing.Point(28, 24);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(294, 22);
+            this.dateTimePicker.TabIndex = 0;
             // 
             // lblAmount
             // 
@@ -162,6 +162,7 @@
             this.btnAddRecord.TabIndex = 14;
             this.btnAddRecord.Text = "Add record";
             this.btnAddRecord.UseVisualStyleBackColor = true;
+            this.btnAddRecord.Click += new System.EventHandler(this.btnAddRecord_Click);
             // 
             // btnClose
             // 
@@ -192,7 +193,7 @@
             this.Controls.Add(this.cboStoreName);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblAmount);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePicker);
             this.Name = "Add_Record";
             this.Text = "Add Record";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.saveComboBoxItems);
@@ -203,7 +204,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.ComboBox cboStoreName;
