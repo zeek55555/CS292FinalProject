@@ -11,3 +11,4 @@ c:\users\warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292Fin
 C:\Users\Warren\Documents\Visual Studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.View_All_Records.resources
 C:\Users\Warren\Documents\Visual Studio 2015\Projects\CS292FinalProject\CS292FinalProject\bin\Debug\spendingRecords.mdf
 C:\Users\Warren\Documents\Visual Studio 2015\Projects\CS292FinalProject\CS292FinalProject\bin\Debug\spendingRecords_log.ldf
+C:\Users\Warren\documents\visual studio 2015\Projects\CS292FinalProject\CS292FinalProject\obj\Debug\CS292FinalProject.Options.resources

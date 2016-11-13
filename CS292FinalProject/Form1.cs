@@ -83,7 +83,8 @@ namespace CS292FinalProject
 
         private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Options options = new Options();
+            options.Show();
         }
     }
 }
