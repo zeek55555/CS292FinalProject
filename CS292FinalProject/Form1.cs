@@ -86,5 +86,12 @@ namespace CS292FinalProject
             Options options = new Options();
             options.Show();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Dialog
+            //MessageBox box = new MessageBox("Spending Spotter\nCreated by Warren Barnes\nFall 2016\nCS292 C# Project at IPFW");
+            MessageBox.Show("Spending Spotter\nCreated by Warren Barnes\nCS292 C# Project at IPFW\nFall 2016", "About");
+        }
     }
 }
