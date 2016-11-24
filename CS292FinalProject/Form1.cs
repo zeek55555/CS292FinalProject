@@ -79,10 +79,21 @@ namespace CS292FinalProject
             // TODO: This line of code loads data into the 'spendingRecordsDataSet.spendingRecords' table. You can move, or remove it, as needed.
             this.spendingRecordsTableAdapter.Fill(this.spendingRecordsDataSet.spendingRecords);
 
+            lblTodaysDate.Text += DateTime.Now.ToString("d");
+            //lblFirstRecord.Text = 
+            //lblMostRecentRecord.Text += 
+            //lblTotalNumberOfRecords.Text += 
+            //lblHighestRecord.Text = 
+            //lblAverageAmount.Text = 
+            //lblLargestTotalRetailer.Text = 
+            //lblLargestTotalType.Text = 
+            //lblStoreWithMostPurchases.Text = 
         }
 
+
         private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+        
+
             Options options = new Options();
             options.Show();
         }
