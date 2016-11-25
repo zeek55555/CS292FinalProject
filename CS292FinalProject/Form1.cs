@@ -78,22 +78,26 @@ namespace CS292FinalProject
         {
             // TODO: This line of code loads data into the 'spendingRecordsDataSet.spendingRecords' table. You can move, or remove it, as needed.
             this.spendingRecordsTableAdapter.Fill(this.spendingRecordsDataSet.spendingRecords);
+            spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter adapter = new spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
 
             lblTodaysDate.Text += DateTime.Now.ToString("d");
-            //lblFirstRecord.Text = 
-            //lblMostRecentRecord.Text += 
-            //lblTotalNumberOfRecords.Text += 
-            //lblHighestRecord.Text = 
-            //lblAverageAmount.Text = 
-            //lblLargestTotalRetailer.Text = 
-            //lblLargestTotalType.Text = 
-            //lblStoreWithMostPurchases.Text = 
+            DateTime earliest = (DateTime)adapter.EarliestRecordDate();
+            lblFirstRecord.Text += earliest.ToString("d");
+            DateTime latest = (DateTime)adapter.LatestRecordDate();
+            lblDaysSinceFirstRecord.Text += (latest - earliest).TotalDays;
+            lblMostRecentRecord.Text += latest.ToString("d");
+            lblTotalNumberOfRecords.Text += adapter.NumberOfRecords();
+            decimal max = (decimal)adapter.MaxAmount();
+            lblHighestRecord.Text += max.ToString("c");
+            decimal average = (decimal)adapter.AverageAmount();
+            lblAverageAmount.Text += average.ToString("c");
+            //lblLargestTotalRetailer.Text += 
+            //lblLargestTotalType.Text += 
+            //lblStoreWithMostPurchases.Text += 
         }
 
 
-        private void optionsToolStripMenuItem1_Click(object sender, EventArgs e)
-        
-
+        private void optionsToolStripMenuItem1_Click(object sender, EventArgs e) {
             Options options = new Options();
             options.Show();
         }

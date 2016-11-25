@@ -78,6 +78,46 @@ SELECT Id, Date, Amount, Type FROM spendingRecords WHERE (Id = SCOPE_IDENTITY())
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AverageAmount" Modifier="Public" Name="AverageAmount" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="AverageAmount">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AVG(Amount) FROM spendingRecords</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EarliestRecordDate" Modifier="Public" Name="EarliestRecordDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="EarliestRecordDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MIN(Date) FROM dbo.spendingRecords</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LatestRecordDate" Modifier="Public" Name="LatestRecordDate" QueryType="Scalar" ScalarCallRetval="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="LatestRecordDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MAX(Date) FROM spendingRecords</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MaxAmount" Modifier="Public" Name="MaxAmount" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="MaxAmount">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MAX(Amount) FROM spendingRecords</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NumberOfRecords" Modifier="Public" Name="NumberOfRecords" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="NumberOfRecords">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*) FROM spendingRecords</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
         </Tables>
@@ -88,7 +128,7 @@ SELECT Id, Date, Amount, Type FROM spendingRecords WHERE (Id = SCOPE_IDENTITY())
   <xs:element name="spendingRecordsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="spendingRecordsDataSet" msprop:Generator_UserDSName="spendingRecordsDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="spendingRecords" msprop:Generator_TableClassName="spendingRecordsDataTable" msprop:Generator_TableVarName="tablespendingRecords" msprop:Generator_RowChangedName="spendingRecordsRowChanged" msprop:Generator_TablePropName="spendingRecords" msprop:Generator_RowDeletingName="spendingRecordsRowDeleting" msprop:Generator_RowChangingName="spendingRecordsRowChanging" msprop:Generator_RowEvHandlerName="spendingRecordsRowChangeEventHandler" msprop:Generator_RowDeletedName="spendingRecordsRowDeleted" msprop:Generator_RowClassName="spendingRecordsRow" msprop:Generator_UserTableName="spendingRecords" msprop:Generator_RowEvArgName="spendingRecordsRowChangeEvent">
+        <xs:element name="spendingRecords" msprop:Generator_TableClassName="spendingRecordsDataTable" msprop:Generator_TableVarName="tablespendingRecords" msprop:Generator_TablePropName="spendingRecords" msprop:Generator_RowDeletingName="spendingRecordsRowDeleting" msprop:Generator_RowChangingName="spendingRecordsRowChanging" msprop:Generator_RowEvHandlerName="spendingRecordsRowChangeEventHandler" msprop:Generator_RowDeletedName="spendingRecordsRowDeleted" msprop:Generator_UserTableName="spendingRecords" msprop:Generator_RowChangedName="spendingRecordsRowChanged" msprop:Generator_RowEvArgName="spendingRecordsRowChangeEvent" msprop:Generator_RowClassName="spendingRecordsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
