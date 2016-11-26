@@ -71,12 +71,34 @@ namespace CS292FinalProject
 
         private void btnAddStore_Click(object sender, EventArgs e)
         {
-            stores.Add(txtNewStore.Text);
+            String store = txtNewStore.Text;
+            stores.Add(store);
+            int place = 0;
+            for(int i = 0; i < stores.Count; i++)
+            {
+                if(stores[i] == store)
+                {
+                    place = i;
+                    break;
+                }
+            }
+            cboStoreName.SelectedIndex = place;
         }
 
         private void btnAddType_Click(object sender, EventArgs e)
         {
-            storeTypes.Add(txtNewType.Text);
+            String type = txtNewType.Text;
+            storeTypes.Add(type);
+            int place = 0;
+            for (int i = 0; i < storeTypes.Count; i++)
+            {
+                if (storeTypes[i] == type)
+                {
+                    place = i;
+                    break;
+                }
+            }
+            cboPurchaseType.SelectedIndex = place;
         }
 
         private void saveComboBoxItems(object sender, FormClosingEventArgs e)
@@ -118,6 +140,8 @@ namespace CS292FinalProject
 
             spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter adapter = new spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
             adapter.AddSpendingRecord(dateTime, (decimal) amount, type);
+
+            lblStatus.Text = "record added with type " + type + " for " + amount.ToString("c");
         }
     }
 }

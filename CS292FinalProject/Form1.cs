@@ -76,24 +76,32 @@ namespace CS292FinalProject
 
         private void MainScreen_Load(object sender, EventArgs e)
         {
+            displayMainScreenStats();
+        }
+
+        private void displayMainScreenStats()
+        {
             // TODO: This line of code loads data into the 'spendingRecordsDataSet.spendingRecords' table. You can move, or remove it, as needed.
             this.spendingRecordsTableAdapter.Fill(this.spendingRecordsDataSet.spendingRecords);
             spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter adapter = new spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
 
-            lblTodaysDate.Text += DateTime.Now.ToString("d");
+            lblTodaysDate.Text = "Today's date:" + DateTime.Now.ToString("d");
             DateTime earliest = (DateTime)adapter.EarliestRecordDate();
-            lblFirstRecord.Text += earliest.ToString("d");
+            lblFirstRecord.Text = "Date of first record:" + earliest.ToString("d");
             DateTime latest = (DateTime)adapter.LatestRecordDate();
-            lblDaysSinceFirstRecord.Text += (latest - earliest).TotalDays;
-            lblMostRecentRecord.Text += latest.ToString("d");
-            lblTotalNumberOfRecords.Text += adapter.NumberOfRecords();
+            lblMostRecentRecord.Text = "Date of most recent record:" + latest.ToString("d");
+            lblDaysSinceFirstRecord.Text = "Days since first record:" + (latest - earliest).TotalDays;
+            lblTotalNumberOfRecords.Text = "Total number of records:" + adapter.NumberOfRecords();
             decimal max = (decimal)adapter.MaxAmount();
-            lblHighestRecord.Text += max.ToString("c");
+            lblHighestRecord.Text = "Highest record:" + max.ToString("c");
             decimal average = (decimal)adapter.AverageAmount();
-            lblAverageAmount.Text += average.ToString("c");
+            lblAverageAmount.Text = "Average amount:" + average.ToString("c");
             //lblLargestTotalRetailer.Text += 
-            //lblLargestTotalType.Text += 
-            //lblStoreWithMostPurchases.Text += 
+            decimal largestByType = (decimal)adapter.LargestTypeAmount();
+            lblLargestTotalType.Text = "Largest total of one type:" + largestByType.ToString("c");
+            //lblStoreWithMostPurchases.Text = "Store with most purchases:" + 
+
+            //TODO: Call this method every time we go to this view from a place the data could have been changed
         }
 
 
