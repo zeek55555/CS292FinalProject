@@ -136,10 +136,11 @@ namespace CS292FinalProject
                 MessageBox.Show("Record could not be added due to invalid amount");
                 return;
             }
+            String store = cboStoreName.SelectedItem.ToString();
             String type = cboPurchaseType.SelectedItem.ToString();
 
             spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter adapter = new spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
-            adapter.AddSpendingRecord(dateTime, (decimal) amount, type);
+            adapter.AddSpendingRecord(dateTime, (decimal) amount, type, store);
 
             lblStatus.Text = "record added with type " + type + " for " + amount.ToString("c");
         }

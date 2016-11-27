@@ -34,14 +34,19 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.spendingRecordsTableAdapter = new CS292FinalProject.spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
             this.tableAdapterManager = new CS292FinalProject.spendingRecordsDataSetTableAdapters.TableAdapterManager();
-            this.spendingRecordsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spendingRecordsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.spendingRecordsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.storeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // spendingRecordsBindingSource
@@ -56,7 +61,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(563, 563);
+            this.btnClose.Location = new System.Drawing.Point(254, 563);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(130, 30);
             this.btnClose.TabIndex = 1;
@@ -74,60 +79,79 @@
             this.tableAdapterManager.spendingRecordsTableAdapter = this.spendingRecordsTableAdapter;
             this.tableAdapterManager.UpdateOrder = CS292FinalProject.spendingRecordsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // spendingRecordsDataGridView
+            // spendingRecordsBindingSource1
             // 
-            this.spendingRecordsDataGridView.AutoGenerateColumns = false;
-            this.spendingRecordsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.spendingRecordsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.spendingRecordsDataGridView.DataSource = this.spendingRecordsBindingSource;
-            this.spendingRecordsDataGridView.Location = new System.Drawing.Point(181, 113);
-            this.spendingRecordsDataGridView.Name = "spendingRecordsDataGridView";
-            this.spendingRecordsDataGridView.RowTemplate.Height = 24;
-            this.spendingRecordsDataGridView.Size = new System.Drawing.Size(672, 342);
-            this.spendingRecordsDataGridView.TabIndex = 1;
+            this.spendingRecordsBindingSource1.DataMember = "spendingRecords";
+            this.spendingRecordsBindingSource1.DataSource = this.spendingRecordsDataSetBindingSource;
             // 
-            // dataGridViewTextBoxColumn1
+            // spendingRecordsDataSetBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.spendingRecordsDataSetBindingSource.DataSource = this.spendingRecordsDataSet;
+            this.spendingRecordsDataSetBindingSource.Position = 0;
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGridView1
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.storeDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.spendingRecordsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(27, 37);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(626, 502);
+            this.dataGridView1.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn3
+            // idDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Amount";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Amount";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // dateDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Type";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            // 
+            // storeDataGridViewTextBoxColumn
+            // 
+            this.storeDataGridViewTextBoxColumn.DataPropertyName = "Store";
+            this.storeDataGridViewTextBoxColumn.HeaderText = "Store";
+            this.storeDataGridViewTextBoxColumn.Name = "storeDataGridViewTextBoxColumn";
             // 
             // View_All_Records
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 613);
-            this.Controls.Add(this.spendingRecordsDataGridView);
+            this.ClientSize = new System.Drawing.Size(682, 658);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnClose);
             this.Name = "View_All_Records";
             this.Text = "View_All_Records";
             this.Load += new System.EventHandler(this.View_All_Records_Load);
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -138,10 +162,13 @@
         private System.Windows.Forms.BindingSource spendingRecordsBindingSource;
         private spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter spendingRecordsTableAdapter;
         private spendingRecordsDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView spendingRecordsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.BindingSource spendingRecordsDataSetBindingSource;
+        private System.Windows.Forms.BindingSource spendingRecordsBindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn storeDataGridViewTextBoxColumn;
     }
 }

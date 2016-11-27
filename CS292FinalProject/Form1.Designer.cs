@@ -51,14 +51,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chtLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.spendingRecordsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.spendingRecordsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.spendingRecordsDataSet = new CS292FinalProject.spendingRecordsDataSet();
             this.spendingRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddRecord = new System.Windows.Forms.Button();
             this.btnViewAllRecords = new System.Windows.Forms.Button();
@@ -71,17 +69,19 @@
             this.spendingRecordsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.btnEditRecord = new System.Windows.Forms.Button();
             this.btnDeleteRecord = new System.Windows.Forms.Button();
+            this.spendingRecordsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spendingRecordsDataSet = new CS292FinalProject.spendingRecordsDataSet();
             this.spendingRecordsTableAdapter = new CS292FinalProject.spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFirstRecord
@@ -190,7 +190,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem1,
-            this.closeToolStripMenuItem});
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -198,15 +198,15 @@
             // optionsToolStripMenuItem1
             // 
             this.optionsToolStripMenuItem1.Name = "optionsToolStripMenuItem1";
-            this.optionsToolStripMenuItem1.Size = new System.Drawing.Size(136, 26);
+            this.optionsToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.optionsToolStripMenuItem1.Text = "Options";
             this.optionsToolStripMenuItem1.Click += new System.EventHandler(this.optionsToolStripMenuItem1_Click);
             // 
-            // closeToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
-            this.closeToolStripMenuItem.Text = "Close";
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
             // 
@@ -254,16 +254,6 @@
             // 
             this.spendingRecordsBindingSource3.DataMember = "spendingRecords";
             this.spendingRecordsBindingSource3.DataSource = this.spendingRecordsDataSetBindingSource;
-            // 
-            // spendingRecordsDataSetBindingSource
-            // 
-            this.spendingRecordsDataSetBindingSource.DataSource = this.spendingRecordsDataSet;
-            this.spendingRecordsDataSetBindingSource.Position = 0;
-            // 
-            // spendingRecordsDataSet
-            // 
-            this.spendingRecordsDataSet.DataSetName = "spendingRecordsDataSet";
-            this.spendingRecordsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // spendingRecordsBindingSource
             // 
@@ -390,6 +380,16 @@
             this.btnDeleteRecord.Text = "Delete Record";
             this.btnDeleteRecord.UseVisualStyleBackColor = true;
             // 
+            // spendingRecordsDataSetBindingSource
+            // 
+            this.spendingRecordsDataSetBindingSource.DataSource = this.spendingRecordsDataSet;
+            this.spendingRecordsDataSetBindingSource.Position = 0;
+            // 
+            // spendingRecordsDataSet
+            // 
+            this.spendingRecordsDataSet.DataSetName = "spendingRecordsDataSet";
+            this.spendingRecordsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // spendingRecordsTableAdapter
             // 
             this.spendingRecordsTableAdapter.ClearBeforeFill = true;
@@ -428,13 +428,13 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +457,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chtLineGraph;
         private System.Windows.Forms.Button btnAddRecord;
         private System.Windows.Forms.Button btnViewAllRecords;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
