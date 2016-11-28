@@ -97,10 +97,11 @@ namespace CS292FinalProject
             decimal average = (decimal)adapter.AverageAmount();
             lblAverageAmount.Text = "Average amount:" + average.ToString("c");
             decimal largestByStore = (decimal)adapter.LargestStoreAmount();
-            lblLargestTotalRetailer.Text = "Largest total at one retailer: (" + largestByStore.ToString("c") + ")";
+            lblLargestTotalRetailer.Text = "Largest total at one retailer:" + largestByStore.ToString("c") + " (" + adapter.LargestStoreAmountString() + ")";
             decimal largestByType = (decimal)adapter.LargestTypeAmount();
-            lblLargestTotalType.Text = "Largest total of one type: (" + largestByType.ToString("c") + ")";
-            //lblStoreWithMostPurchases.Text = "Store with most purchases:" + 
+            lblLargestTotalType.Text = "Largest total of one type:" + largestByType.ToString("c") + " (" + adapter.LargestTypeAmountString() + ")";
+            lblStoreWithMostPurchases.Text = "Store with most purchases:" + adapter.StoreWithMostPurchases() +
+                "(" + adapter.MostPurchasesByStore() + ")";
 
             //TODO: Call this method every time we go to this view from a place the data could have been changed
         }

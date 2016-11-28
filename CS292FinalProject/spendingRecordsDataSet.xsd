@@ -110,10 +110,26 @@ SELECT Id, Date, Amount, Type, Store FROM spendingRecords WHERE (Id = SCOPE_IDEN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LargestTypeAmount" Modifier="Public" Name="LargestTypeAmount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="LargestTypeAmount">
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectName="SELECT TOP 1 Store, MAX(Amount) AS maximumAmount FROM spendingRecords GROUP BY Store ORDER BY maximumAmount DESC" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LargestStoreAmountString" Modifier="Public" Name="LargestStoreAmountString" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="LargestStoreAmountString">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Store FROM (SELECT TOP 1 Store, Max(Amount) as maximumAmount FROM spendingRecords GROUP BY Store ORDER BY maximumAmount DESC) maximumAmount</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LargestTypeAmount" Modifier="Public" Name="LargestTypeAmount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="LargestTypeAmount">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MAX(maximumAmount) FROM (SELECT Type, SUM(Amount) as maximumAmount FROM spendingRecords group by Type) maximumAmount</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectName="SELECT TOP 1 Type, MAX(Amount) AS maximumAmount FROM spendingRecords GROUP BY Type ORDER BY maximumAmount DESC" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="LargestTypeAmountString" Modifier="Public" Name="LargestTypeAmountString" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="LargestTypeAmountString">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Type FROM (SELECT TOP 1 Type, Max(Amount) as maximumAmount FROM spendingRecords GROUP BY Type ORDER BY maximumAmount DESC) maximumAmount</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -134,10 +150,26 @@ SELECT Id, Date, Amount, Type, Store FROM spendingRecords WHERE (Id = SCOPE_IDEN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NumberOfRecords" Modifier="Public" Name="NumberOfRecords" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="NumberOfRecords">
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MostPurchasesByStore" Modifier="Public" Name="MostPurchasesByStore" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="MostPurchasesByStore">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT MAX(quantity) FROM (SELECT Store, Count(Amount) as quantity FROM spendingRecords group by Store) quantity</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NumberOfRecords" Modifier="Public" Name="NumberOfRecords" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="NumberOfRecords">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM spendingRecords</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="spendingRecordsConnectionString (Settings)" DbObjectName="SELECT TOP 1 Store, COUNT(Amount) AS quantity FROM spendingRecords GROUP BY Store ORDER BY quantity DESC" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="StoreWithMostPurchases" Modifier="Public" Name="StoreWithMostPurchases" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="StoreWithMostPurchases">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Store FROM (SELECT TOP 1 Store, Count(Amount) as quantity FROM spendingRecords GROUP BY Store ORDER BY quantity DESC) quantity</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -152,7 +184,7 @@ SELECT Id, Date, Amount, Type, Store FROM spendingRecords WHERE (Id = SCOPE_IDEN
   <xs:element name="spendingRecordsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="spendingRecordsDataSet" msprop:Generator_UserDSName="spendingRecordsDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="spendingRecords" msprop:Generator_TableClassName="spendingRecordsDataTable" msprop:Generator_TableVarName="tablespendingRecords" msprop:Generator_RowChangedName="spendingRecordsRowChanged" msprop:Generator_TablePropName="spendingRecords" msprop:Generator_RowDeletingName="spendingRecordsRowDeleting" msprop:Generator_RowChangingName="spendingRecordsRowChanging" msprop:Generator_RowEvHandlerName="spendingRecordsRowChangeEventHandler" msprop:Generator_RowDeletedName="spendingRecordsRowDeleted" msprop:Generator_RowClassName="spendingRecordsRow" msprop:Generator_UserTableName="spendingRecords" msprop:Generator_RowEvArgName="spendingRecordsRowChangeEvent">
+        <xs:element name="spendingRecords" msprop:Generator_TableClassName="spendingRecordsDataTable" msprop:Generator_TableVarName="tablespendingRecords" msprop:Generator_TablePropName="spendingRecords" msprop:Generator_RowDeletingName="spendingRecordsRowDeleting" msprop:Generator_RowChangingName="spendingRecordsRowChanging" msprop:Generator_RowEvHandlerName="spendingRecordsRowChangeEventHandler" msprop:Generator_RowDeletedName="spendingRecordsRowDeleted" msprop:Generator_UserTableName="spendingRecords" msprop:Generator_RowChangedName="spendingRecordsRowChanged" msprop:Generator_RowEvArgName="spendingRecordsRowChangeEvent" msprop:Generator_RowClassName="spendingRecordsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -177,7 +209,7 @@ SELECT Id, Date, Amount, Type, Store FROM spendingRecords WHERE (Id = SCOPE_IDEN
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="Constraint1">
       <xs:selector xpath=".//mstns:spendingRecords" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
