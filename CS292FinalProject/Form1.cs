@@ -100,8 +100,7 @@ namespace CS292FinalProject
             lblLargestTotalRetailer.Text = "Largest total at one retailer:" + largestByStore.ToString("c") + " (" + adapter.LargestStoreAmountString() + ")";
             decimal largestByType = (decimal)adapter.LargestTypeAmount();
             lblLargestTotalType.Text = "Largest total of one type:" + largestByType.ToString("c") + " (" + adapter.LargestTypeAmountString() + ")";
-            lblStoreWithMostPurchases.Text = "Store with most purchases:" + adapter.StoreWithMostPurchases() +
-                "(" + adapter.MostPurchasesByStore() + ")";
+            lblStoreWithMostPurchases.Text = "Store with most purchases:" + adapter.StoreWithMostPurchases() + " (" + adapter.MostPurchasesByStore() + ")";
 
             //TODO: Call this method every time we go to this view from a place the data could have been changed
         }
@@ -117,6 +116,12 @@ namespace CS292FinalProject
             //Dialog
             //MessageBox box = new MessageBox("Spending Spotter\nCreated by Warren Barnes\nFall 2016\nCS292 C# Project at IPFW");
             MessageBox.Show("Spending Spotter\nCreated by Warren Barnes\nCS292 C# Project at IPFW\nFall 2016", "About");
+        }
+
+        private void btnViewStoreTotals_Click(object sender, EventArgs e)
+        {
+            View_Store_Totals viewStoreTotals = new View_Store_Totals();
+            viewStoreTotals.Show();
         }
     }
 }

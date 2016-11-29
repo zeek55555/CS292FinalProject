@@ -93,6 +93,12 @@
     <Compile Include="View All Records.Designer.cs">
       <DependentUpon>View All Records.cs</DependentUpon>
     </Compile>
+    <Compile Include="View Store Totals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Store Totals.Designer.cs">
+      <DependentUpon>View Store Totals.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Add Record.resx">
       <DependentUpon>Add Record.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="View All Records.resx">
       <DependentUpon>View All Records.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Store Totals.resx">
+      <DependentUpon>View Store Totals.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -56,32 +56,27 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chtLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.spendingRecordsBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.spendingRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spendingRecordsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.spendingRecordsDataSet = new CS292FinalProject.spendingRecordsDataSet();
-            this.spendingRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddRecord = new System.Windows.Forms.Button();
             this.btnViewAllRecords = new System.Windows.Forms.Button();
             this.btnLineGraph = new System.Windows.Forms.Button();
             this.chtBarChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.spendingRecordsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnBarChart = new System.Windows.Forms.Button();
             this.btnPieChart = new System.Windows.Forms.Button();
             this.chtPieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.spendingRecordsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.btnEditRecord = new System.Windows.Forms.Button();
             this.btnDeleteRecord = new System.Windows.Forms.Button();
             this.spendingRecordsTableAdapter = new CS292FinalProject.spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
+            this.btnViewStoreTotals = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFirstRecord
@@ -234,7 +229,7 @@
             // 
             chartArea1.Name = "ChartArea1";
             this.chtLineGraph.ChartAreas.Add(chartArea1);
-            this.chtLineGraph.DataSource = this.spendingRecordsBindingSource1;
+            this.chtLineGraph.DataSource = this.spendingRecordsBindingSource;
             legend1.Name = "Legend1";
             this.chtLineGraph.Legends.Add(legend1);
             this.chtLineGraph.Location = new System.Drawing.Point(389, 42);
@@ -250,10 +245,10 @@
             this.chtLineGraph.TabIndex = 11;
             this.chtLineGraph.Text = "Line Graph";
             // 
-            // spendingRecordsBindingSource3
+            // spendingRecordsBindingSource
             // 
-            this.spendingRecordsBindingSource3.DataMember = "spendingRecords";
-            this.spendingRecordsBindingSource3.DataSource = this.spendingRecordsDataSetBindingSource;
+            this.spendingRecordsBindingSource.DataMember = "spendingRecords";
+            this.spendingRecordsBindingSource.DataSource = this.spendingRecordsDataSetBindingSource;
             // 
             // spendingRecordsDataSetBindingSource
             // 
@@ -264,11 +259,6 @@
             // 
             this.spendingRecordsDataSet.DataSetName = "spendingRecordsDataSet";
             this.spendingRecordsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spendingRecordsBindingSource
-            // 
-            this.spendingRecordsBindingSource.DataMember = "spendingRecords";
-            this.spendingRecordsBindingSource.DataSource = this.spendingRecordsDataSetBindingSource;
             // 
             // btnAddRecord
             // 
@@ -305,7 +295,7 @@
             // 
             chartArea2.Name = "ChartArea1";
             this.chtBarChart.ChartAreas.Add(chartArea2);
-            this.chtBarChart.DataSource = this.spendingRecordsBindingSource1;
+            this.chtBarChart.DataSource = this.spendingRecordsBindingSource;
             legend2.Name = "Legend1";
             this.chtBarChart.Legends.Add(legend2);
             this.chtBarChart.Location = new System.Drawing.Point(439, 96);
@@ -320,11 +310,6 @@
             this.chtBarChart.TabIndex = 15;
             this.chtBarChart.Text = "Bar Chart";
             this.chtBarChart.Visible = false;
-            // 
-            // spendingRecordsBindingSource1
-            // 
-            this.spendingRecordsBindingSource1.DataMember = "spendingRecords";
-            this.spendingRecordsBindingSource1.DataSource = this.spendingRecordsDataSetBindingSource;
             // 
             // btnBarChart
             // 
@@ -367,11 +352,6 @@
             this.chtPieChart.Text = "Pie Chart";
             this.chtPieChart.Visible = false;
             // 
-            // spendingRecordsBindingSource2
-            // 
-            this.spendingRecordsBindingSource2.DataMember = "spendingRecords";
-            this.spendingRecordsBindingSource2.DataSource = this.spendingRecordsDataSetBindingSource;
-            // 
             // btnEditRecord
             // 
             this.btnEditRecord.Location = new System.Drawing.Point(42, 492);
@@ -394,11 +374,22 @@
             // 
             this.spendingRecordsTableAdapter.ClearBeforeFill = true;
             // 
+            // btnViewStoreTotals
+            // 
+            this.btnViewStoreTotals.Location = new System.Drawing.Point(200, 559);
+            this.btnViewStoreTotals.Name = "btnViewStoreTotals";
+            this.btnViewStoreTotals.Size = new System.Drawing.Size(121, 44);
+            this.btnViewStoreTotals.TabIndex = 21;
+            this.btnViewStoreTotals.Text = "View Store Totals";
+            this.btnViewStoreTotals.UseVisualStyleBackColor = true;
+            this.btnViewStoreTotals.Click += new System.EventHandler(this.btnViewStoreTotals_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 641);
+            this.Controls.Add(this.btnViewStoreTotals);
             this.Controls.Add(this.btnDeleteRecord);
             this.Controls.Add(this.btnEditRecord);
             this.Controls.Add(this.chtPieChart);
@@ -427,14 +418,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +442,6 @@
         private System.Windows.Forms.Label lblStoreWithMostPurchases;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chtLineGraph;
         private System.Windows.Forms.Button btnAddRecord;
         private System.Windows.Forms.Button btnViewAllRecords;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -470,12 +457,11 @@
         private System.Windows.Forms.Button btnDeleteRecord;
         private spendingRecordsDataSet spendingRecordsDataSet;
         private System.Windows.Forms.BindingSource spendingRecordsDataSetBindingSource;
-        private System.Windows.Forms.BindingSource spendingRecordsBindingSource;
         private spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter spendingRecordsTableAdapter;
-        private System.Windows.Forms.BindingSource spendingRecordsBindingSource1;
-        private System.Windows.Forms.BindingSource spendingRecordsBindingSource2;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem1;
-        private System.Windows.Forms.BindingSource spendingRecordsBindingSource3;
+        private System.Windows.Forms.BindingSource spendingRecordsBindingSource;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chtLineGraph;
+        private System.Windows.Forms.Button btnViewStoreTotals;
     }
 }
 
