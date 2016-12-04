@@ -1,7 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿/*
+ * Name: Warren Barnes
+ * Date: 10/26/16
+ * Project: Final Project
+ * Purpose: Learn C#
+ */
+
+using System;
 using System.Windows.Forms;
 
 namespace CS292FinalProject

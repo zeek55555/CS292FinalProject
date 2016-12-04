@@ -36,6 +36,11 @@ namespace CS292FinalProject
             }
         }
 
+        /// <summary>
+        /// Show form to edit a record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditRecord_Click(object sender, EventArgs e)
         {
             EditRecord ed = new EditRecord();
@@ -43,6 +48,11 @@ namespace CS292FinalProject
             displayMainScreenStats();
         }
 
+        /// <summary>
+        /// Show form to delete a record
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDeleteRecord_Click(object sender, EventArgs e)
         {
             DeleteRecord ed = new DeleteRecord();
@@ -76,6 +86,11 @@ namespace CS292FinalProject
             chtPieChart.Visible = false;
         }
 
+        /// <summary>
+        /// Change chart visibility
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBarChart_Click(object sender, EventArgs e)
         {
             btnLineGraph.Enabled = true;
@@ -86,6 +101,11 @@ namespace CS292FinalProject
             chtPieChart.Visible = false;
         }
 
+        /// <summary>
+        /// Change chart visibility
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPieChart_Click(object sender, EventArgs e)
         {
             btnLineGraph.Enabled = true; ;
@@ -96,11 +116,19 @@ namespace CS292FinalProject
             chtPieChart.Visible = true;
         }
 
+        /// <summary>
+        /// Show main screen text stats
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainScreen_Load(object sender, EventArgs e)
         {
             displayMainScreenStats();
         }
 
+        /// <summary>
+        /// Fill labels will appropriate main screen stats text
+        /// </summary>
         private void displayMainScreenStats()
         {
             // TODO: This line of code loads data into the 'spendingRecordsDataSet.spendingRecords' table. You can move, or remove it, as needed.
@@ -132,12 +160,21 @@ namespace CS292FinalProject
 
         }
 
-
+        /// <summary>
+        /// Show options view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void optionsToolStripMenuItem1_Click(object sender, EventArgs e) {
             Options options = new Options();
             options.Show();
         }
 
+        /// <summary>
+        /// Display about page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Dialog
@@ -145,6 +182,11 @@ namespace CS292FinalProject
             MessageBox.Show("Spending Spotter\nCreated by Warren Barnes\nCS292 C# Project at IPFW\nFall 2016", "About");
         }
 
+        /// <summary>
+        /// Export spending records to a text file at the location of the user's choice
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExportData_Click(object sender, EventArgs e)
         {
             saveFileDialog.Filter = "Text File | *.txt";

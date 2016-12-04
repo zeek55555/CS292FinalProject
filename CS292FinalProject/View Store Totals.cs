@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * Name: Warren Barnes
+ * Date: 10/26/16
+ * Project: Final Project
+ * Purpose: Learn C#
+ * 
+ * This feature was not implemented because I could not figure out a
+ * way to extract this information from the database and display it to the user
+ */
+
+using System;
 using System.Windows.Forms;
 
 namespace CS292FinalProject

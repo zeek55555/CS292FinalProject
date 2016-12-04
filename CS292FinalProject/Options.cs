@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*
+ * Name: Warren Barnes
+ * Date: 10/26/16
+ * Project: Final Project
+ * Purpose: Learn C#
+ */
+
+using System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CS292FinalProject
@@ -32,6 +33,12 @@ namespace CS292FinalProject
             cboRemovePurchaseType.DataSource = storeTypeBindingSource;
         }
 
+        /// <summary>
+        /// Fill combo boxes with store and category options
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="list"></param>
+        /// <returns></returns>
         private bool populateComboBoxes(String filename, BindingList<String> list)
         {
             bool result;
@@ -63,6 +70,11 @@ namespace CS292FinalProject
             return result;
         }
 
+        /// <summary>
+        /// Remove store from combo box options
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRemoveStore_Click(object sender, EventArgs e)
         {
             int selectedIndex = cboRemoveStore.SelectedIndex;
@@ -71,6 +83,11 @@ namespace CS292FinalProject
             lblStatus.Text = "Store removed";
         }
 
+        /// <summary>
+        /// Remove category from purchase type options
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRemovePurchaseType_Click(object sender, EventArgs e)
         {
             int selectedIndex = cboRemovePurchaseType.SelectedIndex;
@@ -79,6 +96,9 @@ namespace CS292FinalProject
             lblStatus.Text = "Store type removed";
         }
 
+        /// <summary>
+        /// Save current combo box options to files
+        /// </summary>
         private void saveComboBoxItems()
         {
             String output = "";
@@ -104,11 +124,21 @@ namespace CS292FinalProject
             file2.Close();
         }
 
+        /// <summary>
+        /// Exit this form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Add a store to store combo box options
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddStore_Click(object sender, EventArgs e)
         {
             String store = txtAddStore.Text;
@@ -117,6 +147,11 @@ namespace CS292FinalProject
             lblStatus.Text = "Store added";
         }
 
+        /// <summary>
+        /// Add type to combo box options
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddType_Click(object sender, EventArgs e)
         {
             String type = txtAddPurchaseType.Text;
