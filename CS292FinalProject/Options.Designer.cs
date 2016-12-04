@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.grpRemoveStoreOrPurchaseType = new System.Windows.Forms.GroupBox();
-            this.cboRemoveStore = new System.Windows.Forms.ComboBox();
-            this.btnRemoveStore = new System.Windows.Forms.Button();
-            this.grpAddStoreOrPurchaseType = new System.Windows.Forms.GroupBox();
-            this.cboRemovePurchaseType = new System.Windows.Forms.ComboBox();
             this.btnRemovePurchaseType = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.txtAddStore = new System.Windows.Forms.TextBox();
-            this.txtAddPurchaseType = new System.Windows.Forms.TextBox();
-            this.btnAddStore = new System.Windows.Forms.Button();
+            this.cboRemovePurchaseType = new System.Windows.Forms.ComboBox();
+            this.btnRemoveStore = new System.Windows.Forms.Button();
+            this.cboRemoveStore = new System.Windows.Forms.ComboBox();
+            this.grpAddStoreOrPurchaseType = new System.Windows.Forms.GroupBox();
             this.btnAddType = new System.Windows.Forms.Button();
+            this.btnAddStore = new System.Windows.Forms.Button();
+            this.txtAddPurchaseType = new System.Windows.Forms.TextBox();
+            this.txtAddStore = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.grpRemoveStoreOrPurchaseType.SuspendLayout();
@@ -59,13 +59,23 @@
             this.grpRemoveStoreOrPurchaseType.TabStop = false;
             this.grpRemoveStoreOrPurchaseType.Text = "Remove a Store or Purchase Type";
             // 
-            // cboRemoveStore
+            // btnRemovePurchaseType
             // 
-            this.cboRemoveStore.FormattingEnabled = true;
-            this.cboRemoveStore.Location = new System.Drawing.Point(39, 37);
-            this.cboRemoveStore.Name = "cboRemoveStore";
-            this.cboRemoveStore.Size = new System.Drawing.Size(185, 24);
-            this.cboRemoveStore.TabIndex = 0;
+            this.btnRemovePurchaseType.Location = new System.Drawing.Point(301, 78);
+            this.btnRemovePurchaseType.Name = "btnRemovePurchaseType";
+            this.btnRemovePurchaseType.Size = new System.Drawing.Size(140, 23);
+            this.btnRemovePurchaseType.TabIndex = 1;
+            this.btnRemovePurchaseType.Text = "Remove Type";
+            this.btnRemovePurchaseType.UseVisualStyleBackColor = true;
+            this.btnRemovePurchaseType.Click += new System.EventHandler(this.btnRemovePurchaseType_Click);
+            // 
+            // cboRemovePurchaseType
+            // 
+            this.cboRemovePurchaseType.FormattingEnabled = true;
+            this.cboRemovePurchaseType.Location = new System.Drawing.Point(39, 78);
+            this.cboRemovePurchaseType.Name = "cboRemovePurchaseType";
+            this.cboRemovePurchaseType.Size = new System.Drawing.Size(185, 24);
+            this.cboRemovePurchaseType.TabIndex = 0;
             // 
             // btnRemoveStore
             // 
@@ -76,6 +86,14 @@
             this.btnRemoveStore.Text = "Remove Store";
             this.btnRemoveStore.UseVisualStyleBackColor = true;
             this.btnRemoveStore.Click += new System.EventHandler(this.btnRemoveStore_Click);
+            // 
+            // cboRemoveStore
+            // 
+            this.cboRemoveStore.FormattingEnabled = true;
+            this.cboRemoveStore.Location = new System.Drawing.Point(39, 37);
+            this.cboRemoveStore.Name = "cboRemoveStore";
+            this.cboRemoveStore.Size = new System.Drawing.Size(185, 24);
+            this.cboRemoveStore.TabIndex = 0;
             // 
             // grpAddStoreOrPurchaseType
             // 
@@ -90,47 +108,15 @@
             this.grpAddStoreOrPurchaseType.TabStop = false;
             this.grpAddStoreOrPurchaseType.Text = "Add a Store or Purchase Type";
             // 
-            // cboRemovePurchaseType
+            // btnAddType
             // 
-            this.cboRemovePurchaseType.FormattingEnabled = true;
-            this.cboRemovePurchaseType.Location = new System.Drawing.Point(39, 78);
-            this.cboRemovePurchaseType.Name = "cboRemovePurchaseType";
-            this.cboRemovePurchaseType.Size = new System.Drawing.Size(185, 24);
-            this.cboRemovePurchaseType.TabIndex = 0;
-            // 
-            // btnRemovePurchaseType
-            // 
-            this.btnRemovePurchaseType.Location = new System.Drawing.Point(301, 78);
-            this.btnRemovePurchaseType.Name = "btnRemovePurchaseType";
-            this.btnRemovePurchaseType.Size = new System.Drawing.Size(140, 23);
-            this.btnRemovePurchaseType.TabIndex = 1;
-            this.btnRemovePurchaseType.Text = "Remove Type";
-            this.btnRemovePurchaseType.UseVisualStyleBackColor = true;
-            this.btnRemovePurchaseType.Click += new System.EventHandler(this.btnRemovePurchaseType_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(377, 400);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // txtAddStore
-            // 
-            this.txtAddStore.Location = new System.Drawing.Point(39, 37);
-            this.txtAddStore.Name = "txtAddStore";
-            this.txtAddStore.Size = new System.Drawing.Size(185, 22);
-            this.txtAddStore.TabIndex = 0;
-            // 
-            // txtAddPurchaseType
-            // 
-            this.txtAddPurchaseType.Location = new System.Drawing.Point(39, 73);
-            this.txtAddPurchaseType.Name = "txtAddPurchaseType";
-            this.txtAddPurchaseType.Size = new System.Drawing.Size(185, 22);
-            this.txtAddPurchaseType.TabIndex = 1;
+            this.btnAddType.Location = new System.Drawing.Point(301, 72);
+            this.btnAddType.Name = "btnAddType";
+            this.btnAddType.Size = new System.Drawing.Size(140, 23);
+            this.btnAddType.TabIndex = 3;
+            this.btnAddType.Text = "Add Type";
+            this.btnAddType.UseVisualStyleBackColor = true;
+            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
             // 
             // btnAddStore
             // 
@@ -142,15 +128,29 @@
             this.btnAddStore.UseVisualStyleBackColor = true;
             this.btnAddStore.Click += new System.EventHandler(this.btnAddStore_Click);
             // 
-            // btnAddType
+            // txtAddPurchaseType
             // 
-            this.btnAddType.Location = new System.Drawing.Point(301, 72);
-            this.btnAddType.Name = "btnAddType";
-            this.btnAddType.Size = new System.Drawing.Size(140, 23);
-            this.btnAddType.TabIndex = 3;
-            this.btnAddType.Text = "Add Type";
-            this.btnAddType.UseVisualStyleBackColor = true;
-            this.btnAddType.Click += new System.EventHandler(this.btnAddType_Click);
+            this.txtAddPurchaseType.Location = new System.Drawing.Point(39, 73);
+            this.txtAddPurchaseType.Name = "txtAddPurchaseType";
+            this.txtAddPurchaseType.Size = new System.Drawing.Size(185, 22);
+            this.txtAddPurchaseType.TabIndex = 1;
+            // 
+            // txtAddStore
+            // 
+            this.txtAddStore.Location = new System.Drawing.Point(39, 37);
+            this.txtAddStore.Name = "txtAddStore";
+            this.txtAddStore.Size = new System.Drawing.Size(185, 22);
+            this.txtAddStore.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(396, 362);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // statusStrip1
             // 

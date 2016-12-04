@@ -6,6 +6,7 @@
  */
 
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace CS292FinalProject
@@ -24,8 +25,29 @@ namespace CS292FinalProject
         /// <param name="e"></param>
         private void btnAddRecord_Click(object sender, EventArgs e)
         {
-            Add_Record addRecord = new Add_Record();
-            addRecord.Show();
+            //Add_Record addRecord = new Add_Record();
+            //addRecord.Show();
+
+            using (Add_Record addRecord = new Add_Record())
+            {
+                addRecord.ShowDialog();
+
+                displayMainScreenStats();
+            }
+        }
+
+        private void btnEditRecord_Click(object sender, EventArgs e)
+        {
+            EditRecord ed = new EditRecord();
+            ed.ShowDialog();
+            displayMainScreenStats();
+        }
+
+        private void btnDeleteRecord_Click(object sender, EventArgs e)
+        {
+            DeleteRecord ed = new DeleteRecord();
+            ed.ShowDialog();
+            displayMainScreenStats();
         }
 
         /// <summary>
@@ -84,25 +106,30 @@ namespace CS292FinalProject
             // TODO: This line of code loads data into the 'spendingRecordsDataSet.spendingRecords' table. You can move, or remove it, as needed.
             this.spendingRecordsTableAdapter.Fill(this.spendingRecordsDataSet.spendingRecords);
             spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter adapter = new spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
+            try
+            {
+                lblTodaysDate.Text = "Today's date:" + DateTime.Now.ToString("d");
+                DateTime earliest = (DateTime)adapter.EarliestRecordDate();
+                lblFirstRecord.Text = "Date of first record:" + earliest.ToString("d");
+                DateTime latest = (DateTime)adapter.LatestRecordDate();
+                lblMostRecentRecord.Text = "Date of most recent record:" + latest.ToString("d");
+                lblDaysSinceFirstRecord.Text = "Days since first record:" + (latest - earliest).TotalDays;
+                lblTotalNumberOfRecords.Text = "Total number of records:" + adapter.NumberOfRecords();
+                decimal max = (decimal)adapter.MaxAmount();
+                lblHighestRecord.Text = "Highest record:" + max.ToString("c");
+                decimal average = (decimal)adapter.AverageAmount();
+                lblAverageAmount.Text = "Average amount:" + average.ToString("c");
+                decimal largestByStore = (decimal)adapter.LargestStoreAmount();
+                lblLargestTotalRetailer.Text = "Largest total at one retailer:" + largestByStore.ToString("c") + " (" + adapter.LargestStoreAmountString() + ")";
+                decimal largestByType = (decimal)adapter.LargestTypeAmount();
+                lblLargestTotalType.Text = "Largest total of one type:" + largestByType.ToString("c") + " (" + adapter.LargestTypeAmountString() + ")";
+                lblStoreWithMostPurchases.Text = "Store with most purchases:" + adapter.StoreWithMostPurchases() + " (" + adapter.MostPurchasesByStore() + ")";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please add a record to view statistics");
+            }
 
-            lblTodaysDate.Text = "Today's date:" + DateTime.Now.ToString("d");
-            DateTime earliest = (DateTime)adapter.EarliestRecordDate();
-            lblFirstRecord.Text = "Date of first record:" + earliest.ToString("d");
-            DateTime latest = (DateTime)adapter.LatestRecordDate();
-            lblMostRecentRecord.Text = "Date of most recent record:" + latest.ToString("d");
-            lblDaysSinceFirstRecord.Text = "Days since first record:" + (latest - earliest).TotalDays;
-            lblTotalNumberOfRecords.Text = "Total number of records:" + adapter.NumberOfRecords();
-            decimal max = (decimal)adapter.MaxAmount();
-            lblHighestRecord.Text = "Highest record:" + max.ToString("c");
-            decimal average = (decimal)adapter.AverageAmount();
-            lblAverageAmount.Text = "Average amount:" + average.ToString("c");
-            decimal largestByStore = (decimal)adapter.LargestStoreAmount();
-            lblLargestTotalRetailer.Text = "Largest total at one retailer:" + largestByStore.ToString("c") + " (" + adapter.LargestStoreAmountString() + ")";
-            decimal largestByType = (decimal)adapter.LargestTypeAmount();
-            lblLargestTotalType.Text = "Largest total of one type:" + largestByType.ToString("c") + " (" + adapter.LargestTypeAmountString() + ")";
-            lblStoreWithMostPurchases.Text = "Store with most purchases:" + adapter.StoreWithMostPurchases() + " (" + adapter.MostPurchasesByStore() + ")";
-
-            //TODO: Call this method every time we go to this view from a place the data could have been changed
         }
 
 
@@ -118,10 +145,48 @@ namespace CS292FinalProject
             MessageBox.Show("Spending Spotter\nCreated by Warren Barnes\nCS292 C# Project at IPFW\nFall 2016", "About");
         }
 
-        private void btnViewStoreTotals_Click(object sender, EventArgs e)
+        private void btnExportData_Click(object sender, EventArgs e)
         {
-            View_Store_Totals viewStoreTotals = new View_Store_Totals();
-            viewStoreTotals.Show();
+            saveFileDialog.Filter = "Text File | *.txt";
+            saveFileDialog.FileName = "Spending Output.txt";
+            String path;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                path = saveFileDialog.FileName;
+
+                TextWriter writer = new StreamWriter(path);
+
+                this.spendingRecordsTableAdapter.Fill(this.spendingRecordsDataSet.spendingRecords);
+                spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter adapter = new spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
+
+                writer.WriteLine("Today's date:" + DateTime.Now.ToString("d"));
+                DateTime earliest = (DateTime)adapter.EarliestRecordDate();
+                writer.WriteLine("Date of first record:" + earliest.ToString("d"));
+                DateTime latest = (DateTime)adapter.LatestRecordDate();
+                writer.WriteLine("Date of most recent record:" + latest.ToString("d"));
+                writer.WriteLine("Days since first record:" + (latest - earliest).TotalDays);
+                writer.WriteLine("Total number of records:" + adapter.NumberOfRecords());
+                decimal max = (decimal)adapter.MaxAmount();
+                writer.WriteLine("Highest record:" + max.ToString("c"));
+                decimal average = (decimal)adapter.AverageAmount();
+                writer.WriteLine("Average amount:" + average.ToString("c"));
+                decimal largestByStore = (decimal)adapter.LargestStoreAmount();
+                writer.WriteLine("Largest total at one retailer:" + largestByStore.ToString("c") + " (" + adapter.LargestStoreAmountString() + ")");
+                decimal largestByType = (decimal)adapter.LargestTypeAmount();
+                writer.WriteLine("Largest total of one type:" + largestByType.ToString("c") + " (" + adapter.LargestTypeAmountString() + ")");
+                writer.WriteLine("Store with most purchases:" + adapter.StoreWithMostPurchases() + " (" + adapter.MostPurchasesByStore() + ")");
+                writer.WriteLine();
+
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        writer.Write("\t" + dataGridView1.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                    }
+                    writer.WriteLine();
+                }
+                writer.Close();
+            }
         }
     }
 }

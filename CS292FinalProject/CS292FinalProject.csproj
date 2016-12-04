@@ -68,6 +68,18 @@
     <Compile Include="Add Record.Designer.cs">
       <DependentUpon>Add Record.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteRecord.Designer.cs">
+      <DependentUpon>DeleteRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRecord.Designer.cs">
+      <DependentUpon>EditRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +113,12 @@
     </Compile>
     <EmbeddedResource Include="Add Record.resx">
       <DependentUpon>Add Record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteRecord.resx">
+      <DependentUpon>DeleteRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRecord.resx">
+      <DependentUpon>EditRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

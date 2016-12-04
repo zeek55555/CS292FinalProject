@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblFirstRecord = new System.Windows.Forms.Label();
             this.lblTodaysDate = new System.Windows.Forms.Label();
             this.lblMostRecentRecord = new System.Windows.Forms.Label();
@@ -53,7 +53,6 @@
             this.optionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chtLineGraph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.spendingRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,7 +68,14 @@
             this.btnEditRecord = new System.Windows.Forms.Button();
             this.btnDeleteRecord = new System.Windows.Forms.Button();
             this.spendingRecordsTableAdapter = new CS292FinalProject.spendingRecordsDataSetTableAdapters.spendingRecordsTableAdapter();
-            this.btnViewStoreTotals = new System.Windows.Forms.Button();
+            this.btnExportData = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.storeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chtLineGraph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsBindingSource)).BeginInit();
@@ -77,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFirstRecord
@@ -206,17 +213,10 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
-            this.optionsToolStripMenuItem.Text = "Options";
             // 
             // aboutToolStripMenuItem
             // 
@@ -227,23 +227,25 @@
             // 
             // chtLineGraph
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chtLineGraph.ChartAreas.Add(chartArea1);
+            chartArea7.Name = "ChartArea1";
+            this.chtLineGraph.ChartAreas.Add(chartArea7);
             this.chtLineGraph.DataSource = this.spendingRecordsBindingSource;
-            legend1.Name = "Legend1";
-            this.chtLineGraph.Legends.Add(legend1);
+            legend7.Name = "Legend1";
+            this.chtLineGraph.Legends.Add(legend7);
             this.chtLineGraph.Location = new System.Drawing.Point(389, 42);
             this.chtLineGraph.Name = "chtLineGraph";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.XValueMember = "Date";
-            series1.YValueMembers = "Amount";
-            this.chtLineGraph.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            series7.XValueMember = "Date";
+            series7.YValueMembers = "Amount";
+            series7.YValuesPerPoint = 2;
+            this.chtLineGraph.Series.Add(series7);
             this.chtLineGraph.Size = new System.Drawing.Size(727, 508);
             this.chtLineGraph.TabIndex = 11;
             this.chtLineGraph.Text = "Line Graph";
+            this.chtLineGraph.Visible = false;
             // 
             // spendingRecordsBindingSource
             // 
@@ -282,7 +284,6 @@
             // 
             // btnLineGraph
             // 
-            this.btnLineGraph.Enabled = false;
             this.btnLineGraph.Location = new System.Drawing.Point(439, 580);
             this.btnLineGraph.Name = "btnLineGraph";
             this.btnLineGraph.Size = new System.Drawing.Size(140, 38);
@@ -293,26 +294,27 @@
             // 
             // chtBarChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chtBarChart.ChartAreas.Add(chartArea2);
+            chartArea8.Name = "ChartArea1";
+            this.chtBarChart.ChartAreas.Add(chartArea8);
             this.chtBarChart.DataSource = this.spendingRecordsBindingSource;
-            legend2.Name = "Legend1";
-            this.chtBarChart.Legends.Add(legend2);
-            this.chtBarChart.Location = new System.Drawing.Point(439, 96);
+            legend8.Name = "Legend1";
+            this.chtBarChart.Legends.Add(legend8);
+            this.chtBarChart.Location = new System.Drawing.Point(389, 42);
             this.chtBarChart.Name = "chtBarChart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.XValueMember = "Date";
-            series2.YValueMembers = "Amount";
-            this.chtBarChart.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            series8.XValueMember = "Date";
+            series8.YValueMembers = "Amount";
+            series8.YValuesPerPoint = 10;
+            this.chtBarChart.Series.Add(series8);
             this.chtBarChart.Size = new System.Drawing.Size(726, 507);
             this.chtBarChart.TabIndex = 15;
             this.chtBarChart.Text = "Bar Chart";
-            this.chtBarChart.Visible = false;
             // 
             // btnBarChart
             // 
+            this.btnBarChart.Enabled = false;
             this.btnBarChart.Location = new System.Drawing.Point(628, 580);
             this.btnBarChart.Name = "btnBarChart";
             this.btnBarChart.Size = new System.Drawing.Size(140, 38);
@@ -333,20 +335,22 @@
             // 
             // chtPieChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chtPieChart.ChartAreas.Add(chartArea3);
+            chartArea9.Name = "ChartArea1";
+            this.chtPieChart.ChartAreas.Add(chartArea9);
             this.chtPieChart.DataSource = this.spendingRecordsBindingSource;
-            legend3.Name = "Legend1";
-            this.chtPieChart.Legends.Add(legend3);
-            this.chtPieChart.Location = new System.Drawing.Point(407, 66);
+            legend9.Name = "Legend1";
+            this.chtPieChart.Legends.Add(legend9);
+            this.chtPieChart.Location = new System.Drawing.Point(389, 42);
             this.chtPieChart.Name = "chtPieChart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.XValueMember = "Type";
-            series3.YValueMembers = "Amount";
-            this.chtPieChart.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            series9.XValueMember = "Type";
+            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series9.YValueMembers = "Amount";
+            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.chtPieChart.Series.Add(series9);
             this.chtPieChart.Size = new System.Drawing.Size(727, 508);
             this.chtPieChart.TabIndex = 18;
             this.chtPieChart.Text = "Pie Chart";
@@ -360,6 +364,7 @@
             this.btnEditRecord.TabIndex = 19;
             this.btnEditRecord.Text = "Edit Record";
             this.btnEditRecord.UseVisualStyleBackColor = true;
+            this.btnEditRecord.Click += new System.EventHandler(this.btnEditRecord_Click);
             // 
             // btnDeleteRecord
             // 
@@ -369,27 +374,78 @@
             this.btnDeleteRecord.TabIndex = 20;
             this.btnDeleteRecord.Text = "Delete Record";
             this.btnDeleteRecord.UseVisualStyleBackColor = true;
+            this.btnDeleteRecord.Click += new System.EventHandler(this.btnDeleteRecord_Click);
             // 
             // spendingRecordsTableAdapter
             // 
             this.spendingRecordsTableAdapter.ClearBeforeFill = true;
             // 
-            // btnViewStoreTotals
+            // btnExportData
             // 
-            this.btnViewStoreTotals.Location = new System.Drawing.Point(200, 559);
-            this.btnViewStoreTotals.Name = "btnViewStoreTotals";
-            this.btnViewStoreTotals.Size = new System.Drawing.Size(121, 44);
-            this.btnViewStoreTotals.TabIndex = 21;
-            this.btnViewStoreTotals.Text = "View Store Totals";
-            this.btnViewStoreTotals.UseVisualStyleBackColor = true;
-            this.btnViewStoreTotals.Click += new System.EventHandler(this.btnViewStoreTotals_Click);
+            this.btnExportData.Location = new System.Drawing.Point(200, 559);
+            this.btnExportData.Name = "btnExportData";
+            this.btnExportData.Size = new System.Drawing.Size(121, 44);
+            this.btnExportData.TabIndex = 21;
+            this.btnExportData.Text = "Export Data";
+            this.btnExportData.UseVisualStyleBackColor = true;
+            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.amountDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.storeDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.spendingRecordsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(450, 89);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(575, 395);
+            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.Visible = false;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // amountDataGridViewTextBoxColumn
+            // 
+            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
+            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
+            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            // 
+            // storeDataGridViewTextBoxColumn
+            // 
+            this.storeDataGridViewTextBoxColumn.DataPropertyName = "Store";
+            this.storeDataGridViewTextBoxColumn.HeaderText = "Store";
+            this.storeDataGridViewTextBoxColumn.Name = "storeDataGridViewTextBoxColumn";
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1205, 641);
-            this.Controls.Add(this.btnViewStoreTotals);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnExportData);
             this.Controls.Add(this.btnDeleteRecord);
             this.Controls.Add(this.btnEditRecord);
             this.Controls.Add(this.chtPieChart);
@@ -423,6 +479,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spendingRecordsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtBarChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chtPieChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,7 +503,6 @@
         private System.Windows.Forms.Button btnViewAllRecords;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button btnLineGraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtBarChart;
@@ -461,7 +517,14 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem1;
         private System.Windows.Forms.BindingSource spendingRecordsBindingSource;
         private System.Windows.Forms.DataVisualization.Charting.Chart chtLineGraph;
-        private System.Windows.Forms.Button btnViewStoreTotals;
+        private System.Windows.Forms.Button btnExportData;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn storeDataGridViewTextBoxColumn;
     }
 }
 

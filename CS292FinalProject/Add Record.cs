@@ -17,6 +17,9 @@ namespace CS292FinalProject
         BindingList<String> stores = new BindingList<String>();
         BindingList<String> storeTypes = new BindingList<String>();
 
+        /// <summary>
+        /// Add a spending record to the database
+        /// </summary>
         public Add_Record()
         {
             InitializeComponent();
@@ -33,6 +36,12 @@ namespace CS292FinalProject
             cboPurchaseType.DataSource = storeTypeBindingSource;
         }
 
+        /// <summary>
+        /// Fill combo boxes with the list of stores ad categories
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="list"></param>
+        /// <returns></returns>
         private bool populateComboBoxes(String filename, BindingList<String> list)
         {
             bool result;
@@ -64,11 +73,21 @@ namespace CS292FinalProject
             return result;
         }
 
+        /// <summary>
+        /// Close this window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Add a store to persistant data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddStore_Click(object sender, EventArgs e)
         {
             String store = txtNewStore.Text;
@@ -85,6 +104,11 @@ namespace CS292FinalProject
             cboStoreName.SelectedIndex = place;
         }
 
+        /// <summary>
+        /// Add a type to persistant data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddType_Click(object sender, EventArgs e)
         {
             String type = txtNewType.Text;
@@ -101,6 +125,11 @@ namespace CS292FinalProject
             cboPurchaseType.SelectedIndex = place;
         }
 
+        /// <summary>
+        /// Save items in lists to externals files for persistance
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveComboBoxItems(object sender, FormClosingEventArgs e)
         {
             String output = "";
@@ -126,6 +155,11 @@ namespace CS292FinalProject
             file2.Close();
         }
 
+        /// <summary>
+        /// Add record to database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddRecord_Click(object sender, EventArgs e)
         {
             DateTime dateTime = dateTimePicker.Value.Date;
